@@ -1,0 +1,345 @@
+/* ------------------------- */
+/* Estilos Generales */
+/* ------------------------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+}
+
+body { 
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.texto-naranja {
+    font-weight: 300; /* grosor de texto */
+    color: orange;
+}
+
+.texto-blanco {
+    font-weight: 700;
+    color: #fff;
+}
+
+.texto-negro {
+	color: #000;
+}
+
+/* Clases de FullpageJS */
+/* accedemos al nav del costado */
+#fp-nav ul li a span{
+    background: orange;
+    font-family: 'Oswald';
+}
+/* accedemos al toltip */
+#fp-nav ul li .fp-tooltip{
+    color: orange;
+    font-family: 'Oswald',cursive;
+    text-transform: uppercase;
+}
+
+/* menu de navegacion */
+.nav{
+    position: fixed; /* lo ponemos arriba de los elementos */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 70;
+    width: 100%;
+    margin: 0;
+    padding: 10px 20px;
+}
+.nav li,
+.nav a{
+    display: inline-block; /* se ponen alado del otro */
+    margin: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Oswald', cursive;
+    font-size: 20px;
+    color: #c2c2c2;
+    transition: .5s ease;
+
+}
+.nav li.active {
+    border-bottom: 2px solid orange;
+}
+/* color al elemento activo */
+.menu li a{
+    transition: .5s ease;
+    margin: 0;
+    padding: 0;
+}
+.menu li.active a,
+.menu li:hover a{
+    color: orange;
+}
+
+
+
+
+
+
+/* Estilos para la clase de header */
+.header{
+    background-image: url(../media/bg-imagen.jpeg);
+    background-position: center;
+}
+.header .contenedor-titulo{
+    text-align: center;
+    position: relative;
+    z-index: 99;
+}
+.header .titulo{
+    font-size: 70px;
+    text-transform: uppercase;
+}
+
+.header .contenedor-icono{
+    position: absolute;
+    z-index: 99;
+    bottom: 3%;
+    left: 50%;
+    font-size: 40px;
+    /* llamamos a la animacion y le ponemos tiempo y que sea infinito */
+    animation: bajar-subir 1s ease infinite;
+}
+
+.bg-video{
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* acomodo del fondo */
+    background-size: 100%;
+    background: black;
+    background-position: center;
+    background-size: contain;
+    object-fit: cover;
+}
+
+
+/* animacion */
+@keyframes bajar-subir{
+    0%{transform: translateY(20px);} /* transformamos y que suba arriba */
+    25%{transform: translateY(0px);} /* asemos que suba y baje y denuevo suba */
+    100%{transform: translateY(20px);}
+}
+
+
+
+
+
+/* Productos parte de la seecion */
+
+/* asemos que para todos los articles se acomode la imagen */
+.productos article{
+    background-position: center;
+    background-size: cover;
+}
+.productos article:nth-child(1){
+    background-image: url(../media/producto-01.jpg);
+}
+.productos article:nth-child(2){
+    background-image: url(../media/producto-02.jpg);
+}
+.productos article:nth-child(3){
+    background-image: url(../media/producto-03.jpg);
+}
+
+/* editamos el texto */
+.productos .informacion-productos{
+    margin: 0 30px;
+}
+.productos .informacion-productos::before{
+    content: "";
+    height: 50px;
+    width: 2px;
+    display: inline-block;
+    background: orange;
+    position: absolute;
+    top: 50%;
+    margin: -10px;
+
+}
+.productos .modelo{
+    font-size: 45px;
+}
+.productos .descripcion{
+    font-size: 22px;
+}
+.productos .precio{
+    font-size: 25px;
+}
+/* simbolo de dinero */
+.productos .precio::before{
+    content: "$";
+    display: inline-block;
+}
+
+/* mover el logo de girar el carousel o slide clases fullpage*/
+.fp-controlArrow.fp-next,
+.fp-controlArrow.fp-prev{
+    top: 95%;
+}
+.fp-controlArrow.fp-prev{
+    left: 80%;
+    border-width: 20px 20px 20px 0;
+    border-color: transparent black transparent transparent;
+}
+.fp-controlArrow.fp-next{
+    right: 50px;
+    border-width: 20px 0 20px 20px;
+    border-color: transparent transparent transparent black;
+}
+
+
+
+/* Pie de Pagina */
+
+.footer .texto-naranja{
+    text-transform: uppercase;
+    font-size: 60px;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+.footer h2{
+    opacity: 0; /* lo ocultamos */
+    font-family: 'Oswald', cursive;
+    transition: 1s ease all;
+}
+.footer .redes-sociales {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    font-size: 50px;
+}
+.footer .redes-sociales a{
+    display: flex;
+    width: 100px;
+    height: 100px;
+    background: white;
+    color: #30313A;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    margin: 0 20px;
+}
+.footer .facebook i{
+    color: #3b5998;
+}
+.footer .twitter i{
+    color: #1da1f2;
+}
+.footer .instagram i{
+    color: #c13584;
+}
+.footer .facebook:hover{
+    background: #3b5998;
+}
+.footer .twitter:hover{
+    background: #1da1f2;
+}
+.footer .instagram:hover{
+    background: #c13584;
+}
+.footer .facebook:hover i{
+    color: white;
+}
+.footer .twitter:hover i{
+    color: white;
+}
+.footer .instagram:hover i{
+    color: white;
+}
+
+
+
+/* Responsive con media querys */
+@media screen and (max-width: 768px){
+    .menu li a,
+    .menu li.active a{
+        font-size: 18px;
+    }
+    .modelo{
+        font-size: 40px;
+    }
+    .precio{
+        font-size: 23px;
+    }
+    .footer h2{
+        font-size: 15px;
+    }
+    .footer .redes-sociales{
+        font-size: 30px;
+    }
+    .footer .redes-sociales a{
+        width: 70px;
+        height: 70px;
+    }
+    .footer .texto-naranja{
+        font-size: 40px;
+    }
+}
+@media screen and (max-width: 576px){
+    .header .titulo{
+        font-size: 60px;
+    }
+    .informacion-productos{
+        position: absolute;
+        top: 70%;
+    }
+    .fp-controlArrow.fp-next{
+        left: 100px;
+    }
+    .fp-controlArrow.fp-prev{
+        left: 25px;
+    }
+}
+
+/* parte mas pequeña */
+@media screen and (max-width: 450px){
+    .nav{
+        display: block;
+        text-align: center;
+    }
+    .nav a{
+        font-size: 16px;
+        margin: 0;
+    }
+    .menu{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .menu li a,
+    .menu li.active a{
+        font-size: 15px;
+        padding: 5px;
+    }
+    .titulo{
+        font-size: 45px;
+    }
+    .productos .modelo{
+        font-size: 30px;
+    }
+    .footer .texto-naranja{
+        font-size: 18px;
+    }
+    .footer .redes-sociales a{
+        width: 50px;
+        height: 50px;
+    }
+    .footer .redes-sociales a i{
+        font-size: 25px;
+    }
+}
